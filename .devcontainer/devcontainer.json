@@ -3,7 +3,7 @@
 {
 	"name": "Python 3",
 	"build": {
-		"dockerfile": "Dockerfile",
+		"dockerfile": "Dockerfile.gpu",
 		"context": "..",
 		"args": { 
 			// Update 'VARIANT' to pick a Python version: 3, 3.10, 3.9, 3.8, 3.7, 3.6
@@ -47,5 +47,6 @@
 	// "remoteUser": "vscode",
 	"features": {
 		"docker-in-docker": "latest"
-	}
+	},
+	"runArgs": ["--gpus", "all"]
 }
