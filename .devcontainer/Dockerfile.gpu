@@ -1,0 +1,6 @@
+FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-runtime
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN pip install transformers==4.14.1 \
+   datasets \
+   sklearn
