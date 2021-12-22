@@ -1,2 +1,4 @@
+.cache
+.vscode-server
+models
 __pycache__
-moodbot_multilingual/*
