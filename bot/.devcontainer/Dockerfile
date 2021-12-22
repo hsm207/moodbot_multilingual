@@ -8,4 +8,5 @@ RUN apt update && \
 RUN pip install black \
    debugpy \
    requests \
-   textblob==0.17.1
+   textblob==0.17.1 \
+   iso-639
