@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  rasa-server:
+    image: rasa-server
+    build:
+      context: .
+      dockerfile: ./bot/.devcontainer/Dockerfile
+    volumes:
+      - ./bot/:/app
+    entrypoint: ["sh", "-c", "make run-rasa-server"]
+    ports:
+      - 5005:5005
+    depends_on:
+      - action-server
+    
+  action-server:
+    image: action-server
+    build:
+      context: .
+      dockerfile: ./bot/.devcontainer/Dockerfile
+    volumes:
+      - ./bot/actions:/app/actions
+      - ./bot/makefile:/app/makefile
+    entrypoint: ["sh", "-c", "make run-action-server"]
+    ports:
+      - 5678:5678
+  
+  model-server:
+    image: model-server
+    build:
+      context: .
+      dockerfile: ./bert/.devcontainer/Dockerfile.cpu
+    working_dir: /app
+    volumes:
+      - ./bert:/app
+    entrypoint: ["sh", "-c", "make serve-model"]
