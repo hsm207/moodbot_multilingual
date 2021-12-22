@@ -14,9 +14,10 @@ pipeline:
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
-  - name: MemoizationPolicy
+  - name: AugmentedMemoizationPolicy
+    max_history: 20
   - name: RulePolicy
   - name: TEDPolicy
-    max_history: 5
-    epochs: 100
+    max_history: 20
+    epochs: 200
     constrain_similarities: true
