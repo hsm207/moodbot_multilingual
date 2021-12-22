@@ -2,3 +2,4 @@
 .vscode-server
 models
 __pycache__
+.bash_history
