@@ -5,9 +5,11 @@ rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
+  - action: action_detect_language
   - action: utter_goodbye
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
+  - action: action_detect_language
   - action: utter_iamabot

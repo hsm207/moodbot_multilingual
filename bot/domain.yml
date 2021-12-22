@@ -11,23 +11,132 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - condition:
+    - type: slot
+      name: langcode
+      value: de
+    text: "Hallo! Wie geht's dir?"
+  - condition:
+    - type: slot
+      name: langcode
+      value: en
+    text: "Hey! How are you?"
+  - condition:
+    - type: slot
+      name: langcode
+      value: ms
+    text: "Hello! Apa khabar?"
+  - text: "I'm sorry, I don't speak {langname}. Can you say that in a different language?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - condition:
+    - type: slot
+      name: langcode
+      value: de
+    text: "Hier ist etwas zur Aufmunterung:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
+  - condition:
+    - type: slot
+      name: langcode
+      value: en
+    text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - condition:
+    - type: slot
+      name: langcode
+      value: ms
+    text: "Lihat ini:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "I'm sorry, I don't speak {langname}. Can you say that in a different language?"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - condition:
+    - type: slot
+      name: langcode
+      value: de
+    text: "Hat es geholfen?"
+  - condition:
+    - type: slot
+      name: langcode
+      value: en
+    text: "Did that help you?"
+  - condition:
+    - type: slot
+      name: langcode
+      value: ms
+    text: "Adakah anda gembira sekarang?"
+  - text: "I'm sorry, I don't speak {langname}. Can you say that in a different language?"
+
 
   utter_happy:
-  - text: "Great, carry on!"
+  - condition:
+    - type: slot
+      name: langcode
+      value: de
+    text: "Super, weiter so!"
+  - condition:
+    - type: slot
+      name: langcode
+      value: en
+    text: "Great, carry on!"
+  - condition:
+    - type: slot
+      name: langcode
+      value: ms
+    text: "Hebat, teruskan!"
+  - text: "I'm sorry, I don't speak {langname}. Can you say that in a different language?"
 
   utter_goodbye:
-  - text: "Bye"
+  - condition:
+    - type: slot
+      name: langcode
+      value: de
+    text: "Tschüss"
+  - condition:
+    - type: slot
+      name: langcode
+      value: en
+    text: "Bye"
+  - condition:
+    - type: slot
+      name: langcode
+      value: ms
+    text: "Selamat tinggal"
+  - text: "I'm sorry, I don't speak {langname}. Can you say that in a different language?"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - condition:
+    - type: slot
+      name: langcode
+      value: de
+    text: "Ich bin ein Bot, kreiert mit Hilfe von Rasa."
+  - condition:
+    - type: slot
+      name: langcode
+      value: en
+    text: "I am a bot, powered by Rasa."
+  - condition:
+    - type: slot
+      name: langcode
+      value: ms
+    text: "Saya adalah bot rekaan Rasa"
+  - text: "I'm sorry, I don't speak {langname}. Can you say that in a different language?"
+
+slots:
+  langcode:
+    type: categorical
+    values:
+      - en
+      - de
+      - ms
+    influence_conversation: false
+  
+  langname:
+    type: text
+    influence_conversation: false
+
+actions:
+ - action_detect_language
 
 session_config:
   session_expiration_time: 60

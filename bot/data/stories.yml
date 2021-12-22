@@ -5,26 +5,34 @@ stories:
 - story: happy path
   steps:
   - intent: greet
+  - action: action_detect_language
   - action: utter_greet
   - intent: mood_great
+  - action: action_detect_language
   - action: utter_happy
 
 - story: sad path 1
   steps:
   - intent: greet
+  - action: action_detect_language
   - action: utter_greet
   - intent: mood_unhappy
+  - action: action_detect_language
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: affirm
+  - action: action_detect_language
   - action: utter_happy
 
 - story: sad path 2
   steps:
   - intent: greet
+  - action: action_detect_language
   - action: utter_greet
   - intent: mood_unhappy
+  - action: action_detect_language
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: deny
+  - action: action_detect_language
   - action: utter_goodbye
