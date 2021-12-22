@@ -3,3 +3,4 @@
 models
 __pycache__
 .bash_history
+.keras
