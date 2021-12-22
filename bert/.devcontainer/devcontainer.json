@@ -51,4 +51,6 @@
 	},
 	// Unomment out if running the GPU image
 	// "runArgs": ["--gpus", "all"] 
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/bert,type=bind",
+	"workspaceFolder": "/workspaces/bert"
 }
