@@ -12,3 +12,7 @@ This repo contains code to accompany the [How To Build One Chatbot To Handle Mul
 1. Run `make build` to build the bot
 2. Talk to the bot using the [chat widget](https://github.com/hsm207/moodbot_multilingual/blob/master/ui/ui.html)
 3. Run `make clean` when you are done talking
+
+# Demo
+
+![multilingualdemo](https://user-images.githubusercontent.com/2398765/147301507-62080b77-7cc9-4bba-a160-0ca06388b850.gif)
